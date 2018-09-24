@@ -1,0 +1,46 @@
+1. 2ND LAW NEWTON---------------------------------------
+
+INITIALIZE massa benda TO 600
+INITIALIZE percepatan benda TO 2
+
+COMPUTE massa benda MULTIPLY BY percepatan benda
+SAVE PREVIOUS COMPUTATION AS resultan
+
+2. LEAP YEAR----------------------------------------------
+
+INITIALIZE year
+IF COMPUTE year MOD 4 EQUAL TO 0
+    AND year MOD 100 NOT EQUAL TO 0
+    AND year MOD 400 EQUAL TO 0
+    THEN PRINT "year is leap"
+
+3. LAUNDRY DAY-------------------------------------------
+
+INITIALIZE cucian kotor TO 20
+INITIALIZE cucian di mesin TO 0
+
+WHILE 
+    cucian kotor NOT EQUAL TO 0 AND 
+    cucian di mesin NOT EQUAL TO 20
+        THEN 
+            DO ADD VALUE cucian di mesin BY 1 AND 
+            DO SUBTRACT VALUE OF cucian kotor BY 1
+        END WHEN
+            VALUE OF cucian kotor EQUAL TO 0 AND
+            VALUE OF cucian di mesin EQUAL TO 20
+    
+GENERATE mesin cuci
+
+4. PERIKSA KUKU-----------------------------------------
+
+INITIALIZE siswa siswi TO 40
+WHILE siswa siswi VALUE IS LESS THAN OR EQUAL TO 40
+    INPUT siswa siswi LENGTH OF kuku
+
+    IF siswa siswi LENGTH OF kuku EQUAL TO "panjang"
+        GENERATE hukum
+    ELSE
+        GENERATE puji
+
+    COMPUTE siswa siswi SUBTRACT BY 1
+
