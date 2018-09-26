@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 var tanggal = 1;
 var bulan = 1;
 var tahun = 1999;
