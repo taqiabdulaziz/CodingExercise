@@ -2,7 +2,7 @@
 
 function palindrome(kata) {
     var reversedWord = "";
-    var boolean;
+    
     for (let index = kata.length; index >= 0; index--) {
       reversedWord += kata.charAt(index);
     }

@@ -4,9 +4,11 @@ function angkaPalindrome(num) {
     var revNum = "";
     var numString = String(num);
 
+
     for (var i = numString.length - 1; i >= 0; i--) {
       revNum += numString.charAt(i);
     }
+
     if (revNum == numString) {
       return true;
     } else {
@@ -15,10 +17,10 @@ function angkaPalindrome(num) {
   }
 
   function nextPalNumber(num) {
-    for (let j = num+1; ; j++) {
+    for (var j = num+1; ; j++) {
       if (cekPalindrome(j)) {
         return j;
-        break;
+        
       }
     }
   }
