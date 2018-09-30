@@ -1,39 +1,33 @@
 /*eslint-disable*/
+function dataHandling(array) {
+  var result = "";
+  for (let i = 0; i < array.length; i++) {
+    result =
+      result +
+      "\n" +
+      "Nomor ID: " +
+      array[i][0] +
+      "\n" +
+      "Nama Lengkap: " +
+      array[i][1] +
+      "\n" +
+      "TTL: " +
+      array[i][2] +
+      " " +
+      array[i][3] +
+      "\n" +
+      "Hobi: " +
+      array[i][4] +
+      "\n";
+  }
+  return result;
+}
 
-//contoh input
-var ar = [
+var input = [
   ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"],
   ["0002", "Dika Sembiring", "Medan", "10/10/1992", "Bermain Gitar"],
   ["0003", "Winona", "Ambon", "25/12/1965", "Memasak"],
   ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
 ];
 
-// function dataHandling(arrString) {
-//     var nomorId = ''
-
-//     for (let i = 0; i < arrString.length; i++) {
-//         for (let j = 0; j < arrString.length; j++) {
-//             console.log('Nomor ID: ' + arrString[i][j])
-
-//         }
-//     }
-
-//     return element
-// }
-
-// for (let i = 0; i < input.length; i++) {
-//     console.log("Nomor ID: " + input[i][0]);
-//     console.log("Nama Lengkap: " + input[i][1]);
-//     console.log("TTL: " + input[i][2], input[i][3]);
-//     console.log("Hobi: " + input[i][4]);
-// }
-
-for (var i=0; i<ar.length; i++) {
-    // inner loop applies to sub-arrays
-    for (var j=0; j<ar.length; j++) {
-        // accesses each element of each sub-array in turn
-        console.log( ar[i][j] ); 
-    }
-}
-
-// console.log(dataHandling(input))
+console.log(dataHandling(input));
