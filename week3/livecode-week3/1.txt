@@ -1,0 +1,15 @@
+SOAL 1 -------------------
+1. Algoritma
+Untuk tarif, SIMPAN tipe kendaraan tipe1 dengan nama sedan, minibus, van. selanjutnya SIMPAN nama kendaaran tipe 2 dengan nama variabel bus, trek,
+& mobilbox, terakhir SIMPAN tipe kendaraan tipe3 dengan nama trek-gandeng.
+
+
+
+JIKA kendaraan tipe 1 melewati TOL DALAM KOTA buat variabel dengan nama TARIF untuk tipe kendaraan tersebut dengan value 9500
+JIKA kendaraan tipe 2 melewati TOL DALAM KOTA buat variabel dengan nama TARIF untuk tipe kendaraan tersebut dengan value 11000
+JIKA kendaraan tipe 3 melewati TOL DALAM KOTA buat variabel dengan nama TARIF untuk tipe kendaraan tersebut dengan value 15000
+
+JIKA kendaraan tipe 1 melewati TOL ANTAR KOTA buat variabel dengan nama TARIF untuk tipe kendaraan tersebut dengan value 11500
+JIKA kendaraan tipe 2 melewati TOL ANTAR KOTA buat variabel dengan nama TARIF untuk tipe kendaraan tersebut dengan value 13000
+JIKA kendaraan tipe 1 melewati TOL ANTAR KOTA buat variabel dengan nama TARIF untuk tipe kendaraan tersebut dengan value 18000
+
