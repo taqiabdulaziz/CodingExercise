@@ -67,8 +67,10 @@ function dataHandling2(array) {
 
   console.log(arr);
   console.log(bulan);
-  console.log([s1_date[0],s1_date[2],s1_date[1]]);
-  console.log([s1_date[2],s1_date[1],s1_date[0]].join("-"));
+  console.log(s1_date.sort(function (a, b) {
+    return b-a
+  }));
+  console.log([s1_date[1],s1_date[2],s1_date[0]].join("-"));
   console.log(arr[1].slice(0,15));
   
   
