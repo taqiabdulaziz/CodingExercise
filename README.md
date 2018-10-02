@@ -1,1 +1,1 @@
-<img src="https://media1.tenor.com/images/882d0e4be4fe0a77e6a91e840063dd3a/tenor.gif" width="900" height="400" />
+<img src="https://media1.tenor.com/images/3ccc0e15cbf9bee22c30701649065643/tenor.gif" width="900" height="400" />
