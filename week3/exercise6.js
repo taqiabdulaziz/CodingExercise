@@ -4,7 +4,6 @@ function angkaPalindrome(num) {
     var revNum = "";
     var numString = String(num);
 
-
     for (var i = numString.length - 1; i >= 0; i--) {
       revNum += numString.charAt(i);
     }
@@ -17,10 +16,9 @@ function angkaPalindrome(num) {
   }
 
   function nextPalNumber(num) {
-    for (var j = num+1; ; j++) {
+    for (var j = num + 1; ; j++) {
       if (cekPalindrome(j)) {
         return j;
-        
       }
     }
   }
@@ -33,5 +31,3 @@ console.log(angkaPalindrome(10)); // 11
 console.log(angkaPalindrome(117)); // 121
 console.log(angkaPalindrome(175)); // 181
 console.log(angkaPalindrome(1000)); // 1001
-
-
