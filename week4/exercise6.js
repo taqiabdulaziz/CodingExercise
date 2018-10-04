@@ -1,10 +1,10 @@
+/*eslint-disable*/
 function hitungHuruf(kata) {
   var arrKata = kata.split(" ");
   var counter = 0;
   var counterTemp = 0;
   var wordArr = [];
   var word = "";
-  
 
   for (let i = 0; i < arrKata.length; i++) {
     counterTemp = 0;
