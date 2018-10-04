@@ -3,9 +3,8 @@ function hitungHuruf(kata) {
   var counter = 0;
   var counterTemp = 0;
   var wordArr = [];
-  var wordArrTemp = 0;
   var word = "";
-  var wordTemp = "";
+  
 
   for (let i = 0; i < arrKata.length; i++) {
     counterTemp = 0;

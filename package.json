@@ -1,0 +1,27 @@
+{
+  "name": "anchor",
+  "version": "1.0.0",
+  "description": "<img src=\"https://media1.tenor.com/images/3ccc0e15cbf9bee22c30701649065643/tenor.gif\" width=\"900\" height=\"400\" />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taqiabdulaziz/Hacktiv8_Anchor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taqiabdulaziz/Hacktiv8_Anchor/issues"
+  },
+  "homepage": "https://github.com/taqiabdulaziz/Hacktiv8_Anchor#readme",
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
