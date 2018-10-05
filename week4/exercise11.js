@@ -16,7 +16,7 @@ function changeMe(arr) {
     if (params === undefined) {
       return "Invalid Birth Year";
     } else {
-      return params;
+      return 2018 -params;
     }
   }
 

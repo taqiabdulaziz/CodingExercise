@@ -15,7 +15,7 @@ function shoppingTime(memberId, amount) {
       changeMoney: money
     };
   }
-
+//
   for (let i = 0; i < listHarga.length; i++) {
     if (money >= listHarga[i]) {
       JSON["listPurchased"].push(listBarang[i]);
