@@ -38,6 +38,8 @@ function secondLargest(numbers) {
           numbers[i] = a;
         }
       }
+
+
       counter += 1;
       arrTemp.unshift(numbers[numbers.length - counter]);
     }
