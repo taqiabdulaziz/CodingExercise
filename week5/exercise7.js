@@ -1,6 +1,7 @@
 /*eslint-disable*/
 function hapusSimbol(str) {
     return str.match(/\w+/gi).join('')
+    //score livecode kedua saya belum masuk foxhub kak
   }
   
   // TEST CASES
