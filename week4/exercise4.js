@@ -1,30 +1,31 @@
+/*eslint-disable*/
 function cariModus(arr) {
   var counter = 0;
-  var check = false
+  var check = false;
 
   for (let j = 0; j < arr.length; j++) {
-      for (let k = 0; k < arr.length; k++) {
-          if (arr[j]==arr[k]) {
-              counter+=1
-          }
+    for (let k = 0; k < arr.length; k++) {
+      if (arr[j] == arr[k]) {
+        counter += 1;
       }
+    }
   }
 
-  if (counter/arr.length == arr.length) {
-      return -1
+  if (counter / arr.length == arr.length) {
+    return -1;
   }
 
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
       if (arr[j] == arr[i] && i != j) {
-        check == true
+        check == true;
         return arr[i];
       }
     }
   }
 
   if (check == false) {
-      return  -1
+    return -1;
   }
 }
 
