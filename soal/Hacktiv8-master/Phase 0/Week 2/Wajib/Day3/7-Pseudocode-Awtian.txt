@@ -1,0 +1,13 @@
+BACA dan SIMPAN "angka pertama"
+BACA dan SIMPAN "angka kedua"
+HITUNG "angka pertama" dikali "angka kedua" kemudian SIMPAN
+TULISKAN hasil perhitungan
+
+BACA dan SIMPAN "kata kata"
+IF "kata kata" sama dengan "Saya Belajar Javascript!"
+TULISKAN "Pasti Bisa!"
+
+BACA dan SIMPAN "panjang"
+SIMPAN angka "3" sebagai kelipatan 3 pertama
+ULANGI hingga jumlah deret angka sama dengan "panjang"
+TAMPILKAN angka lalu tambahkan 3

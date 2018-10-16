@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ------------------------
 Count Letter Recursively

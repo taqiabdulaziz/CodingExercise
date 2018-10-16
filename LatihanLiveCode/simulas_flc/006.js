@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 
 Diberikan sebuah function tukar besar kecil yang akan
@@ -18,22 +19,7 @@ RULES
 */
 
 function tukarBesarKecil(kalimat) {
-    if (!kalimat) {
-        return result;
-    }
-    else {
-        var result = kalimat[0];
-        if (result === result.toUpperCase()) {
-            result = result.toLowerCase();
-        }
-        else {
-            result = result.toUpperCase();
-        }
-        if (kalimat.length > 1) {
-            result += tukarBesarKecil(kalimat.slice(1));
-        }
-        return result;
-    }
+
 }
 
 // TEST CASES
