@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/week5/001.js"
+            "program": "${workspaceFolder}/LatihanLiveCode/final-live-code/005.js"
         }
     ]
 }

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 Even Pairs Sum
 --------------
@@ -25,11 +26,33 @@ RULE:
   
 */
 
-function evenPairsSum (str) {
+function evenPairsSum(str) {
+  var arr = [];
+  var string = "";
+  var num = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    string += str.charAt(i);
+    if (string.length == 2) {
+      arr.push(string);
+      string = "";
+    } else if (i == str.length - 1) {
+      arr.push(str.charAt(i) + str.charAt(0));
+    }
+  }
+
+  for (let j = 0; j < arr.length; j++) {
+    if (Number(arr[j])%2 == 0) {
+      num+=Number(arr[j])
+    }
+    
+  }
+
+  return num
   
 }
 
-console.log(evenPairsSum('2044101211')); // 86
-console.log(evenPairsSum('33791363')); // 0
-console.log(evenPairsSum('23426766201')); // 140
-console.log(evenPairsSum('2478201')); // 134
+console.log(evenPairsSum("2044101211")); // 86
+console.log(evenPairsSum("33791363")); // 0
+console.log(evenPairsSum("23426766201")); // 140
+console.log(evenPairsSum("2478201")); // 134

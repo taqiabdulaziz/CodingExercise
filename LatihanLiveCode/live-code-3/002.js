@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 Array Merge
 -----------
@@ -25,18 +26,7 @@ Aturan coding:
 */
 
 function arrayMerge (firstData, secondData) {
-  for (let i = 0; i < secondData.length; i++) {
-    firstData.push(secondData[i]);
-  }
-  for (let i = 0; i < firstData.length; i++) {
-    for (let j = i+1; j < firstData[i].length; j++) {
-      if (firstData[i] === firstData[j]) {
-        firstData.splice(firstData[j], 1)
-        
-      }
-    }
-  }
-  return firstData
+
 }
 // function arrayMerge (firstData, secondData) {
   

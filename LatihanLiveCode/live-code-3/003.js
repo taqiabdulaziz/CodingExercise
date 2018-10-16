@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
  * Array of Object
  * ----------------------------

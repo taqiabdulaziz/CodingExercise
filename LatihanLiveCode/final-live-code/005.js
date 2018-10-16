@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 
   Sebuah guild dalam game memiliki beberapa anggota, dari berbagai jenis class dan level
@@ -60,51 +61,80 @@
  */
 
 function getGuildMemberInfo(members) {
- 
+  var jumlah = 0;
+  var JSON = ["totalMember", "averageLevel"];
+  var result = {};
+
+  for (let i = 0; i < members.length; i++) {
+    jumlah += members[i]["level"];
+  }
+  var avg = jumlah / members.length;
+
+  for (let j = 0; j < members.length; j++) {
+    var check = false;
+    for (let k = 0; k < JSON.length; k++) {
+      if (
+        members[j]["class"] != JSON[k] &&
+        check == false &&
+        k == JSON.length - 1
+      ) {
+        JSON.push(members[j]["class"]);
+      } else if (members[j]["class"] == JSON[k]) {
+        check = true;
+        break;
+      }
+    }
+  }
+
+  
+
+  return JSON;
 }
 
-console.log(getGuildMemberInfo([
-  {
-    name: 'antonio',
-    level: 90,
-    class: 'Knight'
-  },
-  {
-    name: 'banderaz',
-    level: 90,
-    class: 'Priest'
-  },
-  {
-    name: 'cecile',
-    level: 99,
-    class: 'Knight'
-  },
-  {
-    name: 'dominique',
-    level: 92,
-    class: 'Hunter'
-  },
-  {
-    name: 'ernest',
-    level: 92,
-    class: 'Priest'
-  },
-  {
-    name: 'fernandez',
-    level: 91,
-    class: 'Knight'
-  },
-  {
-    name: 'goblin',
-    level: 95,
-    class: 'Knight'
-  },
-  {
-    name: 'hemogoblin',
-    level: 93,
-    class: 'Hunter'
-  }
-]));
+console.log(
+  getGuildMemberInfo([
+    {
+      name: "antonio",
+      level: 90,
+      class: "Knight"
+    },
+    {
+      name: "banderaz",
+      level: 90,
+      class: "Priest"
+    },
+    {
+      name: "cecile",
+      level: 99,
+      class: "Knight"
+    },
+    {
+      name: "dominique",
+      level: 92,
+      class: "Hunter"
+    },
+    {
+      name: "ernest",
+      level: 92,
+      class: "Priest"
+    },
+    {
+      name: "fernandez",
+      level: 91,
+      class: "Knight"
+    },
+    {
+      name: "goblin",
+      level: 95,
+      class: "Knight"
+    },
+    {
+      name: "hemogoblin",
+      level: 93,
+      class: "Hunter"
+    }
+  ])
+);
 /**
 output
 {
@@ -115,13 +145,15 @@ output
 ​​​​​  Hunter: [ { name: 'dominique', level: 92 },​​​​​ { name: 'hemogoblin', level: 93 } ]
 }​​​​​
  */
-console.log(getGuildMemberInfo([
-  { name: 'indah', level: 85, class: 'Assasint' },
-  { name: 'juminten', level: 92, class: 'Blacksmith' },
-  { name: 'kumar', level: 95, class: 'Wizard' },
-  { name: 'lili', class: 'Priest', level: 99 },
-  { name: 'munaroh', class: 'Blacksmith', level: 95 }
-]));
+console.log(
+  getGuildMemberInfo([
+    { name: "indah", level: 85, class: "Assasint" },
+    { name: "juminten", level: 92, class: "Blacksmith" },
+    { name: "kumar", level: 95, class: "Wizard" },
+    { name: "lili", class: "Priest", level: 99 },
+    { name: "munaroh", class: "Blacksmith", level: 95 }
+  ])
+);
 /**
  output:
 ​​​​​{
