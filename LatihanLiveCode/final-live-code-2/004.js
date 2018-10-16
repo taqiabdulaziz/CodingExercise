@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 
 ================
@@ -50,25 +51,6 @@ hasilnya akan ada pada array dalam array pada jawaban
 
 function initialGrouping(studentsArr) {
   
-    // Only Code Here
-    let hurufUnik = [];
-    let jawaban = [];
-    for (let i = 0; i < studentsArr.length; i++) {
-      const element = studentsArr[i];
-      const elementIndex = hurufUnik.indexOf(element[0])
-      if (hurufUnik.indexOf(element[0]) === -1) {
-        hurufUnik.push(element[0]);
-        var temp = []
-        temp.push(element[0]);
-        temp.push(element);
-        jawaban.push(temp);
-      }
-      else {
-        jawaban[elementIndex].push(element);
-      }
-    }
-  
-    return jawaban;
   
   }
   

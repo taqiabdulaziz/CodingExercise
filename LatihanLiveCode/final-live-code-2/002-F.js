@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ==================
 PASSWORD GENERATOR
@@ -37,38 +38,35 @@ output: 'johhello25'
 /* EXPLAIN YOUR LOGIC BELOW! (Required) */
 // Tidak harus formal pseudocode, tapi bagaimana step by step logikanya
 // Nilai tidak valid (0) jika logic dan code berbeda!
-/* logiC
-menggunakan for:
-1. ambil data dari 3 index pertama name dan simpan di namepass
-2. ambil semua index dari email, tapi break for  jika bertemu '@' simpan di mailpass
-kembalikan namepass+mailpass+umur dari pengguna.
-*/
 
 function passGen(firstName, email, age) {
-  // only code here!
-  //namepass
-  let namePass = '';
-  if (firstName.length < 3) return 'NAME IS INVALID!';
-  for (let i = 0; i < 3; i++) {
-    namePass +=  firstName[i];
+  var result = "";
+  if (firstName.length == 1) {
+    return "NAME IS INVALID";
   }
-  //mailpass
-  let mailPass = '';
-  for (let i = 0; i < email.length; i++) {
-    if (email[i] === '@') {
+
+  for (let i = 0; i < firstName.length; i++) {
+    if (i < 3) {
+      result += firstName.charAt(i);
+    }
+  }
+
+  for (let j = 1; j < email.length; j++) {
+    if (email.charAt(j) != "@") {
+      result += email.charAt(j - 1);
+    } else {
+      result += email.charAt(j - 1);
       break;
     }
-    else {
-      mailPass += email[i];
-    }
   }
-  
-  return namePass+mailPass+age
 
+  result+=age
+
+  return result;
 }
 
-console.log(passGen('john', 'hello@gmail.com', 15)); // 'johhello15' 
-console.log(passGen('mickey', 'mike@gmail.com', 1)); // 'micmike1'
-console.log(passGen('a', 'hello@gmail.com', 15)); // 'NAME IS INVALID!'
-console.log(passGen('rudy', 'rud@rudy.co.id', 22)); // 'rudrud22'
-console.log(passGen('bejo', 'zetta@bejo.gov', 50)); // 'bejzetta50'
+console.log(passGen("john", "hello@gmail.com", 15)); // 'johhello15'
+console.log(passGen("mickey", "mike@gmail.com", 1)); // 'micmike1'
+console.log(passGen("a", "hello@gmail.com", 15)); // 'NAME IS INVALID!'
+console.log(passGen("rudy", "rud@rudy.co.id", 22)); // 'rudrud22'
+console.log(passGen("bejo", "zetta@bejo.gov", 50)); // 'bejzetta50'

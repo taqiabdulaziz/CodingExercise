@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 =============
 UNIQUE FINDER
@@ -34,20 +35,30 @@ Jika ditemukan pada array unique, maka tidak akan melakukan apa apa. Sedangkan u
 */
 
 function uniqueFinder(sentence) {
-  // only code here!
-  if (sentence.length < 1) return 'NO WORDS';
-  let arr = sentence.split(' ');
-  let unique = [];
+  var arr = sentence.split(" ")
+  var result = [];
+  var check
+
   for (let i = 0; i < arr.length; i++) {
-    if (unique.indexOf(arr[i].toLowerCase()) === -1 ){
-    unique.push(arr[i]);
+    check = false
+    for (let j = 0; j < result.length; j++) {
+      if (result[j].toUpperCase() == arr[i].toUpperCase()) {
+        check = true
+      }
+    }
+
+    if (check == false) {
+      result.push(arr[i])
     }
   }
-  return unique;
+  if (result.length == 1) {
+    return "NO WORDS"
+  }
+  return result
 }
 
-console.log(uniqueFinder('hello black dragon and hello red dragon')); // ['hello', 'black', 'dragon', 'and', 'red']
-console.log(uniqueFinder('hello HELLo hEllO hlloe')); // ['hello', 'hlloe']
-console.log(uniqueFinder('john is coding and he is coding')); // ['john', 'is', 'coding', 'and', 'he']
-console.log(uniqueFinder('blue blue red blue violet red violet')); // ['blue', 'red', 'violet']
-console.log(uniqueFinder('')); // 'NO WORDS'
+console.log(uniqueFinder("hello black dragon and hello red dragon")); // ['hello', 'black', 'dragon', 'and', 'red']
+console.log(uniqueFinder("hello HELLo hEllO hlloe")); // ['hello', 'hlloe']
+console.log(uniqueFinder("john is coding and he is coding")); // ['john', 'is', 'coding', 'and', 'he']
+console.log(uniqueFinder("blue blue red blue violet red violet")); // ['blue', 'red', 'violet']
+console.log(uniqueFinder("")); // 'NO WORDS'
