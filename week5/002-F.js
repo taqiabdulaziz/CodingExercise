@@ -28,23 +28,20 @@ output: 4
 // REPEAT UNTIL THE i INDEX IS NOT LARGER THAN i+1 INDEX, THAN BACK AND REPEAT TO FIRST STEP
 
 function secondLargest(numbers) {
-    var arrTemp = [];
-    var counter = 0;
-    while (counter < numbers.length) {
-      for (let i = 0; i < numbers.length; i++) {
-        if (numbers[i] >= numbers[i + 1]) {
-          var a = numbers[i + 1];
-          numbers[i + 1] = numbers[i];
-          numbers[i] = a;
-        }
+  var counter = 0;
+  while (counter < numbers.length) {
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] >= numbers[i + 1]) {
+        var a = numbers[i + 1];
+        numbers[i + 1] = numbers[i];
+        numbers[i] = a;
       }
-
-
-      counter += 1;
-      arrTemp.unshift(numbers[numbers.length - counter]);
     }
 
-    return arrTemp[arrTemp.length-2]
+    counter++;
+  }
+
+  return numbers;
 }
 
 // TEST CASES

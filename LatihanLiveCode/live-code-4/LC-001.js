@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 =======================================
 Array Mastery: Summarize Payment Types
@@ -19,20 +20,7 @@ Mudah bukan? :)
 */
 
 function paymentSummary(paymentTypes) {
-  // Code here
-  let cashCount = 0;
-  let debitCount = 0;
-  let creditCount = 0;
-  for (let i = 0; i < paymentTypes.length; i++)  {
-    if (paymentTypes[i] === 'CASH') cashCount++;
-    else if (paymentTypes[i] === 'CREDIT') creditCount++;
-    else debitCount++
-  }
 
-  if (cashCount > debitCount && cashCount > creditCount) return `MOSTLY CASH`;
-  else if (cashCount < debitCount && debitCount > creditCount) return `MOSTLY DEBIT`;
-  else if (creditCount > debitCount && creditCount > cashCount) return `MOSTLY CREDIT`
-  else return `I AM NOT SURE`
 }
   
 // TEST CASES

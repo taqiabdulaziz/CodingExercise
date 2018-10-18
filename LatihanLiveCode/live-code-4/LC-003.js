@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ===================================
 Array Mastery: Plus Minus Operation
@@ -38,13 +39,7 @@ output: 0
 */
 
 function plusMinusProcess(numbers) {
-  // Code here
-  let total = 0;
-  for (let i =0; i< numbers.length; i++) {
-    if (i%2 === 1) total -= numbers[i];
-    else total += numbers[i];
-  }
-  return total;
+
 }
   
 // TEST CASES

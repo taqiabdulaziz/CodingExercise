@@ -24,6 +24,7 @@ function highestScore(students) {
     }
   }
 
+
   //MAP HIGHEST SCORRER EACH CLASSES
   for (let k = 0; k < kelas.length; k++) {
     for (let l = 0; l < students.length; l++) {

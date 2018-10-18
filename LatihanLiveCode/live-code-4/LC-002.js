@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ==================================
 Array Mastery: Separate Them
@@ -23,17 +24,7 @@ output: []
 */
 
 function separateThem(students) {
-  // Code here
-  let splitted = [];
-  for (let i = 0; i < students.length; i++) {
-    let temp = [];
-    temp.push(students[i].split(' dan '));
-      for (let j=0; j< temp[0].length; j++) {
-        splitted.push(temp[0][j])
-      }
 
-  }
-  return splitted
 }
   
 // TEST CASES

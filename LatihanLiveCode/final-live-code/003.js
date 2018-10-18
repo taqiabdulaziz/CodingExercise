@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
   **************
   FAKTOR PRIMA
@@ -55,75 +56,12 @@ RULES:
   - TIDAK BOLEH MENGGUNAKAN FUNCTION ES6
 **/
 
-//KERJAAN SEBELUMNYA
-// function faktorPrima(num) {
-//   var result = [];
-//   var pembagi = 2;
-
-//   while (pembagi <= num) {
-//       if (num % pembagi === 0) {
-//           num = num/pembagi;
-//           result.push(pembagi);
-//       }
-//       else {
-//           pembagi++;
-//       }
-//   }
-//   var jumlah = 0;
-//   hasil = '';
-//   for (let i = 0; i < result.length; i++) {
-//     for (let j = 0; j < result.length; j++) {
-//       if (i === j) {
-//         jumlah++;
-//         break;
-//       }
-//     }
-//     if (i != result.length) {
-//       hasil += result[i] +' pangkat '+ jumlah +', '
-//       jumlah = 0;
-//     }
-//     else if (i = i-1) {
-//       hasil += result[i] +' pangkat '+ jumlah
-//     }
-//   }
-//   return hasil;
-// }
-
 function faktorPrima(num) {
-  var arr = [];
-  var arrPrime = [];
-  var arrTemp = [];
-  for (let i = 0; i <= num; i++) {
-    if (num % i == 0) {
-      arr.push(i);
+  for (let i = 2; i < num; i++) {
+    if (num) {
+      
     }
   }
-
-  for (let j = 0; j < arr.length; j++) {
-    for (let k = 1; k < arr[j]; k++) {
-      if (arr[j] % k == 0) {
-        arrPrime.push(k);
-      }
-    }
-  }
-
-  for (let k = 2; k < arrPrime.length; k++) {
-    var counter = 0
-    for (let l = 1; l < arrPrime[k]; l++) {
-      if (arrPrime[k]%l == 0) {
-        counter++
-      } 
-    }
-
-    if (counter == 2) {
-      arrTemp.push(k)
-    }
-    
-  }
-
-  
-
-  return arrTemp;
 }
 
 console.log(faktorPrima(90)); // 2 pangkat 1, 3 pangkat 2, 5 pangkat 1

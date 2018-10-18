@@ -50,20 +50,45 @@ hasilnya akan ada pada array dalam array pada jawaban
 */
 
 function initialGrouping(studentsArr) {
-  
-  
+  var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var studArr = []
+
+  for (let i = 0; i < array.length; i++) {
+    
+    
   }
-  
-  console.log(initialGrouping(['Budi', 'Badu', 'Joni', 'Jono']));
-  /*
+
+
+  var result = [];
+  var init = [];
+  var check = false;
+  var counter = 0;
+
+  // for (let i = 0; i < studentsArr.length; i++) {
+  //   if (init.length == 0) {
+  //     init.push(studentsArr[i].charAt(0));
+  //   }
+  //   for (let j = 0; j < init.length; j++) {
+  //     if (studentsArr[i].charAt(0) == init[j].charAt(0)) {
+  //       init.push(studentsArr[i]);
+  //       break;
+  //     }
+  //   }
+  // }
+
+  return init;
+}
+
+console.log(initialGrouping(["Budi", "Badu", "Joni", "Jono"]));
+/*
   [
     [ 'B', 'Budi', 'Badu' ],
     [ 'J', 'Joni', 'Jono' ]
   ]
   */
-  
-  console.log(initialGrouping(['Mickey', 'Yusuf', 'Donald', 'Ali', 'Gong']));
-  /*
+
+console.log(initialGrouping(["Mickey", "Yusuf", "Donald", "Ali", "Gong"]));
+/*
   [
     [ 'M', 'Mickey' ],
     [ 'Y', 'Yusuf' ],
@@ -72,15 +97,12 @@ function initialGrouping(studentsArr) {
     [ 'G', 'Gong' ]
   ]
   */
-  
-  console.log(initialGrouping(['Rock', 'Stone', 'Brick', 'Rocker', 'Sticker']));
-  /*
+
+console.log(initialGrouping(["Rock", "Stone", "Brick", "Rocker", "Sticker"]));
+/*
   [
     [ 'R', 'Rock', 'Rocker' ],
     [ 'S', 'Stone', 'Sticker' ],
     [ 'B', 'Brick' ]
   ]
   */
-  
-
-  

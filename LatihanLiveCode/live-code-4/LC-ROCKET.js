@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ==================================
 Array Mastery: Group Odd Evens
@@ -32,21 +33,7 @@ output: "EVENS: 2, 8, 10"
 */
 
 function groupOddEven(students) {
-  // Code here
-  let odds = 'ODDS:';
-  let evens = 'EVENS:';
-  for (let i = 0; i < students.length; i++) {
-    if (students[i] % 2 === 0) {
-      evens += ` ${students[i]},`;
-    } else odds += ` ${students[i]},`;
-  }
 
-    odds = odds.slice(0, odds.length-1);
-    evens = evens.slice(0, evens.length-1);
-    odds += ' ';
-    if (odds.length < 7) odds = "";
-    if (evens.length <7) evens = "";
-    return (odds + evens);
 }
   
 // TEST CASES

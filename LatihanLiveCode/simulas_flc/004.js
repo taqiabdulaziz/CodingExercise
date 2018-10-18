@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 
   Square Number
@@ -36,24 +37,7 @@ NOTE & RULES:
 
 
 function squareNumber(num) {
-  var hasil = [];
-  var j = 1;
-  if (num < 3) {
-    return 'Minimal input adalah 3';
-  }
-  for (let i = 0; i < num; i++) {
-    hasil.push([]);
-    while (hasil[i].length < num) {
-      if (i % 2 == 0) {
-        hasil[i].push(j)
-      }
-      else {
-        hasil[i].unshift(j)
-      }
-      j++;
-    }
-  }
-  return hasil
+
 }
 
 console.log(squareNumber(3));

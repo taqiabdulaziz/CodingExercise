@@ -1,4 +1,4 @@
-
+/*eslint-disable*/
 /**
 
   Diberikan sebuah function perpangkatanDuaRecursive(angka) yang menerima satu parameter
@@ -28,14 +28,16 @@
 **/
 
 function perpangkatanDuaRecursive(angka) {
-  if (angka === 1) {
+  if (angka == 1) {
+    return true
+  }
+
+  if (angka / 2 == 1) {
     return true;
-  }
-  else if (angka % 2 !== 0) {
-    return false;
-  }
-  else {
-    return perpangkatanDuaRecursive(angka/2);
+  } else if (angka / 2 < 1) {
+    return false
+  }else {
+    return perpangkatanDuaRecursive(angka / 2);
   }
 }
 
