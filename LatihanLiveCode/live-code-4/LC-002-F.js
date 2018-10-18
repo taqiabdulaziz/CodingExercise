@@ -24,12 +24,28 @@ output: []
 */
 
 function separateThem(students) {
+  var result = "";
+  var result2 = [];
+  students.forEach(element => {
+    result += " " + element;
+  });
 
+  result = result.split(" ");
+
+  for (let i = 0; i < result.length; i++) {
+    if (result[i].length != 0 && result[i] != "dan") {
+      result2.push(result[i]);
+    }
+  }
+
+  return result2;
 }
-  
+
 // TEST CASES
-console.log(separateThem(['Budi dan Badu'])); // ['Budi', 'Badu']
-console.log(separateThem(['Budi dan Michael'])); // ['Budi', 'Michael']
-console.log(separateThem(['Budi dan Badu', 'Indra dan Indri'])); // ['Budi', 'Badu', 'Indra', 'Indri']
-console.log(separateThem(['Budi dan Badu', 'Indra dan Indri', 'James dan Rodhes'])); // ['Budi', 'Badu', 'Indra', 'Indri', 'James', 'Rhodes']
+console.log(separateThem(["Budi dan Badu"])); // ['Budi', 'Badu']
+console.log(separateThem(["Budi dan Michael"])); // ['Budi', 'Michael']
+console.log(separateThem(["Budi dan Badu", "Indra dan Indri"])); // ['Budi', 'Badu', 'Indra', 'Indri']
+console.log(
+  separateThem(["Budi dan Badu", "Indra dan Indri", "James dan Rodhes"])
+); // ['Budi', 'Badu', 'Indra', 'Indri', 'James', 'Rhodes']
 console.log(separateThem([])); // []

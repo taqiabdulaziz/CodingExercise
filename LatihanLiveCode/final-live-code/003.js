@@ -57,11 +57,33 @@ RULES:
 **/
 
 function faktorPrima(num) {
+  var total = [];
+  var pangkat = [];
+  var arr = [];
+  var counter = 1;
+
   for (let i = 2; i < num; i++) {
-    if (num) {
-      
+    if (num % i == 0) {
+      num = num / i;
+      counter++
+      arr.push(i);
+      i--;
+    } else {
+
+      pangkat.push(counter)
+      counter = 1
     }
   }
+
+  arr.push(num);
+
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[j] != total[total.length - 1] || total.length == 0) {
+      total.push(arr[j]);
+    }
+  }
+
+  return total +" " + counter;
 }
 
 console.log(faktorPrima(90)); // 2 pangkat 1, 3 pangkat 2, 5 pangkat 1

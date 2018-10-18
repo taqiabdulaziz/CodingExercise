@@ -39,9 +39,18 @@ output: 0
 */
 
 function plusMinusProcess(numbers) {
+  var num = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (i % 2 == 0) {
+      num += numbers[i];
+    } else {
+      num -= numbers[i];
+    }
+  }
 
+  return num;
 }
-  
+
 // TEST CASES
 console.log(plusMinusProcess([1, 2, 3, 4, 5])); // 3
 console.log(plusMinusProcess([5, 4, 3, 2, 1, 2])); // 1

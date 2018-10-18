@@ -33,9 +33,32 @@ output: "EVENS: 2, 8, 10"
 */
 
 function groupOddEven(students) {
+  var oddStr = "ODDS:";
+  var evensStr = "EVENS:";
+  var separator = " ";
 
+  for (let i = 0; i < students.length; i++) {
+    if (students[i] % 2 == 1) {
+      oddStr += " " + students[i] + ",";
+    } else {
+      evensStr += " " + students[i] + ",";
+    }
+  }
+
+  if (oddStr.length == 5) {
+    oddStr = "";
+    separator = "";
+  } else if (evensStr.length == 6) {
+    evensStr = "";
+  }
+
+  return (
+    oddStr.substring(0, oddStr.length - 1) +
+    separator +
+    evensStr.substring(0, evensStr.length - 1)
+  );
 }
-  
+
 // TEST CASES
 console.log(groupOddEven([1, 5, 8, 2, 3])); // "ODDS: 1, 5, 3 EVENS: 8, 2"
 console.log(groupOddEven([1, 1, 1])); // "ODDS: 1, 1, 1"

@@ -20,12 +20,36 @@ Mudah bukan? :)
 */
 
 function paymentSummary(paymentTypes) {
+  var cash = 0;
+  var debit = 0;
+  var credit = 0;
 
+  if (paymentTypes.length == 0) {
+    return "I AM NOT SURE"
+  }
+
+  for (let i = 0; i < paymentTypes.length; i++) {
+    if (paymentTypes[i] == "CASH") {
+      cash++;
+    } else if (paymentTypes[i] == "DEBIT") {
+      debit++;
+    } else {
+      credit++;
+    }
+  }
+
+  if (cash > debit && cash > credit) {
+      return "MOSTLY CASH"
+  } else if (debit > cash && debit > credit) {
+    return "MOSTLY DEBIT"
+  } else {
+    return "MOSTLY CREDIT"
+  }
 }
-  
+
 // TEST CASES
-console.log(paymentSummary(['CASH', 'CASH', 'DEBIT'])); // "MOSTLY CASH"
-console.log(paymentSummary(['CREDIT', 'CASH', 'DEBIT', 'CREDIT'])); // "MOSTLY CREDIT"
-console.log(paymentSummary(['DEBIT', 'DEBIT', 'DEBIT'])); // "MOSTLY DEBIT"
-console.log(paymentSummary(['CASH'])); // "MOSTLY CASH"
+console.log(paymentSummary(["CASH", "CASH", "DEBIT"])); // "MOSTLY CASH"
+console.log(paymentSummary(["CREDIT", "CASH", "DEBIT", "CREDIT"])); // "MOSTLY CREDIT"
+console.log(paymentSummary(["DEBIT", "DEBIT", "DEBIT"])); // "MOSTLY DEBIT"
+console.log(paymentSummary(["CASH"])); // "MOSTLY CASH"
 console.log(paymentSummary([])); // "I AM NOT SURE!"
