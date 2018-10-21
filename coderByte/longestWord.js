@@ -1,3 +1,4 @@
+/*eslint-disable*/
 function LongestWord(sen) {
   var test = sen.match(/[a-z]+/gi);
   var testArr = [];
