@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 
 Ugly numbers adalah angka yang jika dibagi dengan faktor prima angka 2, 3 atau 5 menghasilkan angka 1.
@@ -56,12 +57,39 @@ RULE:
 
 */
 
-
 function getUglyNumber(num) {
-  
+  var arrNum = [];
+  var arrPrime = [2, 3, 5];
+  var counter = 0;
+  var num1 = num;
+  var check = 0;
+
+  for (let m = 1; m <= num; m++) {
+    
+    var q = m;
+    if (q == 5) {
+      arrNum.push(q)
+    }
+    for (let l = 0; l < arrPrime.length - 1; l++) {
+      if (q % arrPrime[l] == 0 && q % arrPrime[l + 1] != 0 || q % arrPrime[l] == 0 && q % 5 == 0) {
+        arrNum.push(m);
+      } else if (
+        q % arrPrime[l] == 0 &&
+        q % arrPrime[l + 1] == 0 &&
+        q % arrPrime[l] != 0
+      ) {
+        q /= arrPrime[l];
+      } else if (q % arrPrime[l] == 0) {
+        q /= arrPrime[l];
+        l--;
+      }
+    }
+  }
+
+  return arrNum;
 }
 
 console.log(getUglyNumber(10)); //[ 2, 3, 4, 5, 6, 8, 9, 10 ]
 console.log(getUglyNumber(20)); //[ 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20 ]
-console.log(getUglyNumber(4)); //[ 2, 3, 4]
-console.log(getUglyNumber(1)); //[]
+// console.log(getUglyNumber(4)); //[ 2, 3, 4]
+// console.log(getUglyNumber(1)); //[]

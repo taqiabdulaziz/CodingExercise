@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 
 How Many Gifts
@@ -38,9 +39,26 @@ RULE:
   RETURN TOTAL BARANG
 */
 
-function howManyGifts(maxBudget, gifts){
-  // Code here
-  
+function howManyGifts(maxBudget, gifts) {
+  var jumlah = 0;
+  var totalBudget = 0;
+  var totalBudget2 = "";
+  var index = 0;
+  var counter = 0;
+
+  gifts.sort(function (a,b) {
+    return a-b
+  })
+
+  for (let l = 0; l < gifts.length; l++) {
+    if ((totalBudget + gifts[l] <= maxBudget)) {
+      totalBudget += gifts[l];
+      totalBudget2 += gifts[l].toString();
+      jumlah++;
+    }
+  }
+
+  return jumlah;
 }
 
 console.log(howManyGifts(30000, [15000, 12000, 5000, 3000, 10000])); // 4

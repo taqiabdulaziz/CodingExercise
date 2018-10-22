@@ -19,14 +19,14 @@ function findEvenIndex(arr) {
     if (leftSide == rightSide) {
         return i
     }
-    // console.log(leftSide + " | " + rightSide);
+    // console.log(leftSide + " | " + rightSide);-=
   }
 
   if (leftSide != rightSide) {
       return -1
   }
 
-  
+
 
 
   //FUNCTION

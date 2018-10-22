@@ -8,7 +8,7 @@ function getMiddle(s) {
 
   return s[Math.floor(median)];
 
-  
+
 }
 
 console.log(getMiddle("test"));
