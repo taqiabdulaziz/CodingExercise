@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 di multidimensi array, yang harus student achieve:
 - forming sebuah array multidimensi
@@ -35,8 +36,28 @@ SERTAKAN PSEUDOCODE ATAU ALGORITHMA
 */
 
 function digitsGrouper(numbers) {
-  // only code here..
- 
+  var result = [];
+  var temp1 = [],
+    temp2 = [],
+    temp3 = [],
+    temp4 = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < 10) {
+      temp1.push(numbers[i]);
+    } else if (numbers[i] < 100) {
+      temp2.push(numbers[i]);
+    } else if (numbers[i] < 1000) {
+      temp3.push(numbers[i])
+    } else if (numbers[i] >= 1000) {
+      temp4.push(numbers[i])
+    }
+  }
+  result.push(temp1)
+  result.push(temp2)
+  result.push(temp3)
+  result.push(temp4)
+  return result;
 }
 
 console.log(digitsGrouper([1, 12, 13, 0, 88, 123, 456])); // [ [ 1, 0 ], [ 12, 13, 88 ], [ 123, 456 ], [] ]

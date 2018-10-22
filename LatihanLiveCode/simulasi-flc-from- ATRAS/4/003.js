@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ====================================
 Number and Array Mastery: Statistics
@@ -20,12 +21,44 @@ rules:
 */
 
 function statistik(kata, arr1, arr2) {
-// tulis kode HANYA disini
+  var lowest1 = 0;
+  var lowest2 = 0;
+  var highest1 = 0;
+  var highest2 = 0;
 
+  if (kata == "min") {
+    for (let i = 0; i < arr1.length; i++) {
+      if (lowest1 > arr1[i] || lowest1 == 0) {
+        lowest1 = arr1[i];
+      }
+    }
+
+    for (let j = 0; j < arr2.length; j++) {
+      if (lowest2 > arr2[j] || lowest2 == 0) {
+        lowest2 = arr2[j];
+      }
+    }
+    return lowest1 + " " +lowest2;
+  } else {
+    for (let i = 0; i < arr1.length; i++) {
+        if (highest1 < arr1[i] || highest1 == 0) {
+            highest1 = arr1[i];
+        }
+      }
+  
+      for (let j = 0; j < arr2.length; j++) {
+        if (highest2 < arr2[j] || highest2 == 0) {
+            highest2 = arr2[j];
+        }
+      }
+      return highest1 + " " +highest2;
+  }
+
+  return lowest;
 }
 
-console.log(statistik('min', [1, 1, 1] , [8, 15, 17, 9]));             // 1 8
-console.log(statistik('max', [4, 8, 9, 12] , [33, 88, 99 ,11]));       // 12 99
-console.log(statistik('min', [1, 2, 5, 2, 2] , [67, 45, 55]));         // 1 45
-console.log(statistik('max', [6, 2, 4, 10, 8, 2] , [6, 5, 13, 23]));     // 10 23
-console.log(statistik('min', [5, 11, 18, 6], [3, 1, 8, 13]));          // 5 1
+console.log(statistik("min", [1, 1, 1], [8, 15, 17, 9])); // 1 8
+console.log(statistik("max", [4, 8, 9, 12], [33, 88, 99, 11])); // 12 99
+console.log(statistik("min", [1, 2, 5, 2, 2], [67, 45, 55])); // 1 45
+console.log(statistik("max", [6, 2, 4, 10, 8, 2], [6, 5, 13, 23])); // 10 23
+console.log(statistik("min", [5, 11, 18, 6], [3, 1, 8, 13])); // 5 1

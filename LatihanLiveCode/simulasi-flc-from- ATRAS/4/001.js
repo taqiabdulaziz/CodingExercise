@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ================
 Treasure Hunter
@@ -20,8 +21,19 @@ output: 3
 */
 
 function treasureHunt(str) {
-  // only write code here
+  var counter = 0;
+  var alph = "!@#$%^&*()";
+  var check = false;
 
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < alph.length; j++) {
+      if (str[i] == alph[j]) {
+        counter++;
+      }
+    }
+  }
+
+  return counter;
 }
 
 console.log(treasureHunt("alskdj*lakjsd761^%")); // 3

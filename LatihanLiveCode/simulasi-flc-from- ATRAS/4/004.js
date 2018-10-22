@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 =================================
 Array Mastery: Number Cruncher EX
@@ -31,8 +32,36 @@ Output: 54
 */
 
 function numberCruncherEx(numberArr) {
-  // Start Code Here
+  var arr = [];
+  var counter = 0
 
+  if (numberArr.length % 2 == 0) {
+    for (let i = 0; i < numberArr.length; i++) {
+      if (i == 0) {
+        arr.push(0 + numberArr[i] + numberArr[i + 1]);
+      } else if (i == numberArr.length - 1) {
+        arr.push(numberArr[i - 1] + numberArr[i] + 0);
+      } else {
+        arr.push(numberArr[i - 1] + numberArr[i] + numberArr[i + 1]);
+      }
+    }
+  } else if (numberArr.length % 2 == 1) {
+    for (let i = 1; i < numberArr.length-1; i++) {
+      arr.push(numberArr[i-1] + numberArr[i] + numberArr[i+1])
+      
+    }
+
+    arr.push(0+numberArr[0]+numberArr[1])
+    arr.push(numberArr[numberArr.length-1] + 0 + numberArr[numberArr.length-2])
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2== 1) {
+      counter+=arr[i]
+    }
+    
+  }
+  return counter
 }
 
 console.log(numberCruncherEx([7, 1, 0, 4])); // 1
