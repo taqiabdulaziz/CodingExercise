@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 ===============
 NON PALINDROME
@@ -23,7 +24,24 @@ RULES:
 **/
 
 function nonPalindrome(sentence) {
-  // your code here
+  var str = sentence.split(" ")
+  var result = []
+  var palStr = ""
+  for (let i = 0; i < str.length; i++) {
+    for (let j = str[i].length -1; j >= 0; j--) {
+      palStr+=str[i][j]
+      
+    }
+
+    if (palStr.toLowerCase() != str[i].toLowerCase()) {
+      result.push(str[i])
+    }
+
+    palStr = ""
+    
+  }
+
+  return result
 
 }
 

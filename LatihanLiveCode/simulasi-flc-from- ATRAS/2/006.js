@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 Implementasikan function formatDuration() yang akan menerima satu parameter yaitu jumlah detik
 dan akan mengembalikan string berupa detik yang sudah di-format supaya bisa dibaca oleh manusia
@@ -12,8 +13,10 @@ NOTE: Tidak masalah jika 0 detik ditampilkan.
 */
 
 function recursiveFormatDuration (seconds) {
-  // Code here
-
+  seconds2 = String(seconds)
+  if (seconds.toString().length == 2) {
+    
+  }
 }
 
 console.log(recursiveFormatDuration(3660)); // 1 jam 1 menit 0 detik

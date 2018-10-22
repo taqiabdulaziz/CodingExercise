@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 Participants Summary
 --------------------
@@ -13,20 +14,69 @@ nama peserta dari negara tersebut
 Contoh ada di test cases
 */
 
-function participantsSummary (data) {
-  // Your code here
+function participantsSummary(data) {
+  var country = [];
+  var check = false;
+  var i = 1;
+  var JSON = {};
+  for (let a = 0; a < data.length; a++) {
+    if (country == []) {
+      country.push(data[a][i]);
+    }
+    for (let j = 0; j < country.length; j++) {
+      if (data[a][i] == country[j]) {
+        check = true;
+      }
+    }
 
+    if (check == false) {
+      country.push(data[a][i]);
+    }
+
+    check = false;
+  }
+
+  for (let k = 0; k < country.length; k++) {
+    JSON[country[k]] = {
+      total: getTotal(country[k]),
+      names: getNames(country[k])
+    };
+  }
+
+  function getTotal(params) {
+    var jml = 0;
+    for (let l = 0; l < data.length; l++) {
+      if (data[l][1] == params) {
+        jml++;
+      }
+    }
+
+    return jml;
+  }
+
+  function getNames(params) {
+    var arrName = [];
+    for (let l = 0; l < data.length; l++) {
+      if (data[l][1] == params) {
+        arrName.push(data[l][0]);
+      }
+    }
+    return arrName
+  }
+  return JSON;
 }
 
 // Test cases
-console.log(participantsSummary([
-  ['Dimitri', 'Russia'],
-  ['Heihachi', 'Japan'],
-  ['Sergei', 'Russia'],
-  ['Kazuya', 'Japan'],
-  ['Hwoarang', 'South Korea'],
-  ['Jin', 'Japan']
-]));
+console.log(
+  participantsSummary([
+    ["Dimitri", "Russia"],
+    ["Heihachi", "Japan"],
+    ["Sergei", "Russia"],
+    ["Kazuya", "Japan"],
+    ["Hwoarang", "South Korea"],
+    ["Jin", "Japan"]
+  ])
+);
 /*
 {
   Russia: {
@@ -44,11 +94,13 @@ console.log(participantsSummary([
 }
 */
 
-console.log(participantsSummary([
-  ['Suzuka', 'Japan'],
-  ['Steve', 'United Kingdom'],
-  ['Paul', 'USA']
-]));
+console.log(
+  participantsSummary([
+    ["Suzuka", "Japan"],
+    ["Steve", "United Kingdom"],
+    ["Paul", "USA"]
+  ])
+);
 /*
 {
   Japan: {

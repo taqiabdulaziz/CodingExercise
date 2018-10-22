@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 Missing Numbers
 -------------------
@@ -22,9 +23,49 @@ RULES:
 
 */
 
-function missingNumbers (numbers) {
-  // Code disini
- 
+function missingNumbers(numbers) {
+  var largest = 0;
+  var lowest = null;
+  var num = [];
+  var check = false;
+
+  if (numbers.length == 0) {
+    return []
+  }
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > largest) {
+      largest = numbers[i];
+    }
+  }
+
+  for (let j = 0; j < numbers.length; j++) {
+    if (lowest == null) {
+      lowest = numbers[j];
+    }
+
+    if (numbers[j] < lowest) {
+      lowest = numbers[j];
+    }
+  }
+
+  for (let k = lowest; k <= largest; k++) {
+    for (let l = 0; l < numbers.length; l++) {
+      if (k == numbers[l]) {
+        check = true
+      }
+      
+    }
+
+    if (check == false) {
+      num.push(k)
+    }
+
+    check = false
+    
+  }
+  return num
+  
 }
 
 console.log(missingNumbers([1, 5, 10, 7, 6])); // [2, 3, 4, 8, 9]
