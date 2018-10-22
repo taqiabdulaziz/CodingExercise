@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 -------------------
 Prime Number Cruncher
@@ -53,8 +54,44 @@ RULES
 */
 
 function numberPrimeCruncher(input) {
-  // only code here..
- 
+  var primeArr = [];
+  var counter = 0;
+  var total = 0;
+  var n = 0;
+  var median = 0;
+  var result = []
+
+  //MAPPING PRIME NUMBER
+  for (let i = 2; i <= input; i++) {
+    for (let j = 0; j <= i; j++) {
+      if (i % j == 0) {
+        counter++;
+      }
+    }
+
+    if (counter == 2) {
+      primeArr.push(i);
+    }
+
+    counter = 0;
+  }
+
+  //FIND TOTAL AND MEDIAN
+  for (let k = 0; k < primeArr.length; k++) {
+    total += primeArr[k];
+    n++;
+  }
+
+  median = Math.round(total / n);
+
+  for (let l = 0; l < primeArr.length; l++) {
+    if (primeArr[l] >= median) {
+      result.push(primeArr[l])
+    }
+    
+  }
+
+  return result;
 }
 
 console.log(numberPrimeCruncher(10)); // [ 5, 7 ]

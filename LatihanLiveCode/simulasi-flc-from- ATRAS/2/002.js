@@ -38,7 +38,7 @@ function virusCheck(str, viruses) {
     if (viruses[l] != "|") {
       virusArr.push(viruses[l])
     }
-    
+
   }
 
   for (let i = 0; i < virusArr.length; i++) {

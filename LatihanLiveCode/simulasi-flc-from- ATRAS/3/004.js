@@ -1,4 +1,4 @@
-
+/*eslint-disable*/
 /**
 Mini Sudoku Board
 =================
@@ -20,20 +20,30 @@ yang tipe data-nya berupa String.
 
 */
 
-function miniSudokuBoard (text) {
-  // Code here
-  
+function miniSudokuBoard(text) {
+  var result = [];
+  var arrTemp = [];
+
+  for (let i = 0; i < text.length; i++) {
+    arrTemp.push(text[i]);
+    if (arrTemp.length == 3) {
+      result.push(arrTemp);
+      arrTemp = [];
+    }
+  }
+
+  return result;
 }
 
-console.log(miniSudokuBoard('005030081'));
+console.log(miniSudokuBoard("005030081"));
 // /[ [ '0', '0', '5' ], [ '0', '3', '0' ], [ '0', '8', '1' ] ]
-console.log(miniSudokuBoard('105802000'));
+console.log(miniSudokuBoard("105802000"));
 // [ [ '1', '0', '5' ], [ '8', '0', '2' ], [ '0', '0', '0' ] ]
-console.log(miniSudokuBoard('608730000'));
+console.log(miniSudokuBoard("608730000"));
 // [ [ '6', '0', '8' ], [ '7', '3', '0' ], [ '0', '0', '0' ] ]
-console.log(miniSudokuBoard('096040001'));
+console.log(miniSudokuBoard("096040001"));
 // [ [ '0', '9', '6' ], [ '0', '4', '0' ], [ '0', '0', '1' ] ]
-console.log(miniSudokuBoard('87109'));
+console.log(miniSudokuBoard("87109"));
 // Invalid input
-console.log(miniSudokuBoard(''));
+console.log(miniSudokuBoard(""));
 // Empty board
