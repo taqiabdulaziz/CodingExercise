@@ -14,8 +14,10 @@ diubah-ubah dan asumsi uang kembaliannya selalu cukup dengan jumlah ketersediaan
 */
 
 function hitungKembalian(bayar, harga) {
+  var totalMap = [];
   var kembalian = bayar - harga;
   var totalUang = 0;
+  var jumlah = [];
   var ketersediaanUang = [
     { nominal: 100000, jumlah: 5 },
     { nominal: 50000, jumlah: 5 },
@@ -23,22 +25,60 @@ function hitungKembalian(bayar, harga) {
     { nominal: 10000, jumlah: 5 },
     { nominal: 5000, jumlah: 5 }
   ];
+  var check = false;
+  var JSON = {};
 
-
-  function proses(object) {
-    for (let i = 0; i < ketersediaanUang.length; i++) {
-      for (const key in object[i]) {
-        if (totalUang + object[i][key] <= kembalian) {
-          totalUang += object[i][key];
-                  
-        }
-      }
+  var i = 0;
+  var counter = 0;
+  while (i < ketersediaanUang.length) {
+    if (counter == ketersediaanUang[i].jumlah) {
+      i++;
+      counter = 0;
+    } else if (totalUang + ketersediaanUang[i].nominal <= kembalian) {
+      totalUang += ketersediaanUang[i].nominal;
+      jumlah.push(ketersediaanUang[i].nominal);
+      counter++;
+    } else if (totalUang + ketersediaanUang[i].nominal > kembalian) {
+      i++;
     }
   }
+  for (let i = 0; i < jumlah.length; i++) {
+    if (totalMap.length == 0) {
+      totalMap.push(jumlah[i]);
+    }
+    for (let j = 0; j < totalMap.length; j++) {
+      if (jumlah[i] == totalMap[j]) {
+        check = true;
+      }
+    }
 
-  proses(ketersediaanUang);
+    if (check == false) {
+      totalMap.push(jumlah[i]);
+    }
 
-  return totalUang;
+    check = false;
+  }
+
+  for (let i = 0; i < totalMap.length; i++) {
+    JSON[totalMap[i]] = countMoney(totalMap[i]);
+  }
+
+  function countMoney(params) {
+    var count = 0;
+    for (let i = 0; i < jumlah.length; i++) {
+      if (jumlah[i] == params) {
+        count++;
+      }
+    }
+
+    return count;
+  }
+
+  if (totalUang == kembalian) {
+    return JSON;
+  } else {
+    return "Uang tidak cukup";
+  }
 }
 // console.log(kembalian)
 
@@ -54,14 +94,14 @@ output
 */
 
 // Test Case
-// console.log(hitungKembalian(40000, 35000));
+console.log(hitungKembalian(40000, 35000));
 /*
 output
   { '5000': 1 }
 */
 
 // Test Case 3
-// console.log(hitungKembalian(920000, 80000));
+console.log(hitungKembalian(920000, 80000));
 /*
 output
   { 
@@ -73,7 +113,7 @@ output
 */
 
 // TEST CASE 4
-// console.log(hitungKembalian(50000,50000)); // {}
+console.log(hitungKembalian(50000,50000)); // {}
 
 // TEST CASE 5
-// console.log(hitungKembalian(50000,500000)); // Uang tidak cukup
+console.log(hitungKembalian(50000,500000)); // Uang tidak cukup

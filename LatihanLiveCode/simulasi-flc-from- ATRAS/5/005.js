@@ -37,15 +37,19 @@ function ganjilGenapAsianGames(date, data) {
   var counter = 0;
   var checkSpace = 0;
 
+  if (date > 31 || date == 0) {
+    return "Invalid date"
+  }
+
   for (let i = 0; i < data.length; i++) {
     for (let j = data[i].plat.length - 1; j >= 0; j--) {
       if (data[i].plat[j] == " ") {
         if (date % 2 == 0) {
-          if (data[i].plat[j - 1] % 2 == 0 && data[i]["type"] == "Mobil") {
+          if (data[i].plat[j - 1] % 2 == 1 && data[i]["type"] == "Mobil") {
             counter++;
           }
         } else if (date % 2 == 1 && data[i]["type"] == "Mobil") {
-          if (data[i].plat[j - 1] % 2 == 1) {
+          if (data[i].plat[j - 1] % 2 == 0) {
             counter++;
           }
         }
