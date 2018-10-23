@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ==========
 Bakteri (Rekursif)
@@ -21,11 +22,25 @@ Output: jumlah bakteri pada hari ke-i
 */
 
 function jumlahBakteri(N, B, i) {
-	// start code here
+  var jmlPertama = 1;
+  var total = 0;
 
+  
+
+  for (let j = 0; j < i; j++) {
+    if (j != 0) {
+      jmlPertama = jmlPertama * N;
+	  total = jmlPertama + B;
+	  jmlPertama = total
+    } else if (j == 0) {
+		total = 1
+	}
+  }
+
+  return total;
 }
 
-console.log(jumlahBakteri(3, 4, 1));	// 1
-console.log(jumlahBakteri(1, 3, 5));  // 13
-console.log(jumlahBakteri(5, 2, 3));  // 37
-console.log(jumlahBakteri(5, 0, 5));  // 625
+console.log(jumlahBakteri(3, 4, 1)); // 1
+console.log(jumlahBakteri(1, 3, 5)); // 13
+console.log(jumlahBakteri(5, 2, 3)); // 37
+console.log(jumlahBakteri(5, 0, 5)); // 625

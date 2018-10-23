@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
   ================
   ASIAN GAMES GANJIL GENAP
@@ -32,111 +33,157 @@
   mobil dan memiliki plat genap    
 */
 
-function ganjilGenapAsianGames ( date, data ) {
-  // Your code here
+function ganjilGenapAsianGames(date, data) {
+  var counter = 0;
+  var checkSpace = 0;
 
+  for (let i = 0; i < data.length; i++) {
+    for (let j = data[i].plat.length - 1; j >= 0; j--) {
+      if (data[i].plat[j] == " ") {
+        if (date % 2 == 0) {
+          if (data[i].plat[j - 1] % 2 == 0 && data[i]["type"] == "Mobil") {
+            counter++;
+          }
+        } else if (date % 2 == 1 && data[i]["type"] == "Mobil") {
+          if (data[i].plat[j - 1] % 2 == 1) {
+            counter++;
+          }
+        }
+      }
+    }
+  }
+
+  return counter;
 }
 
+console.log(
+  ganjilGenapAsianGames(30, [
+    {
+      plat: "B 1234 ABC",
+      type: "Mobil"
+    },
+    {
+      plat: "A 2457 HE",
+      type: "Motor"
+    },
+    {
+      plat: "AB 87 RFS",
+      type: "Motor"
+    },
+    {
+      plat: "Z 999 ERT",
+      type: "Mobil"
+    }
+  ])
+); // 1
 
-console.log(ganjilGenapAsianGames(30, [{
-  plat: 'B 1234 ABC',
-  type: 'Mobil'
-}, {
-  plat: 'A 2457 HE',
-  type: 'Motor'
-}, {
-  plat: 'AB 87 RFS',
-  type: 'Motor'
-}, {
-  plat: 'Z 999 ERT',
-  type: 'Mobil'
-}])) // 1
+console.log(
+  ganjilGenapAsianGames(26, [
+    {
+      plat: "A 24 HE",
+      type: "Mobil"
+    },
+    {
+      plat: "AB 871 RFS",
+      type: "Mobil"
+    },
+    {
+      plat: "Z 9992 ERT",
+      type: "Mobil"
+    }
+  ])
+); // 1
 
-console.log(ganjilGenapAsianGames(26, [{
-  plat: 'A 24 HE',
-  type: 'Mobil'
-}, {
-  plat: 'AB 871 RFS',
-  type: 'Mobil'
-}, {
-  plat: 'Z 9992 ERT',
-  type: 'Mobil'
-}])) // 1
+console.log(
+  ganjilGenapAsianGames(1, [
+    {
+      plat: "A 24 WE",
+      type: "Mobil"
+    },
+    {
+      plat: "AB 871 RFS",
+      type: "Mobil"
+    },
+    {
+      plat: "Z 9992 XOXO",
+      type: "Mobil"
+    }
+  ])
+); // 2
 
-console.log(ganjilGenapAsianGames(1, [{
-  plat: 'A 24 WE',
-  type: 'Mobil'
-}, {
-  plat: 'AB 871 RFS',
-  type: 'Mobil'
-}, {
-  plat: 'Z 9992 XOXO',
-  type: 'Mobil'
-}])) // 2
+console.log(
+  ganjilGenapAsianGames(1, [
+    {
+      plat: "A 2431 HE",
+      type: "Motor"
+    },
+    {
+      plat: "AB 87112 RFS",
+      type: "Motor"
+    },
+    {
+      plat: "Z 999 ERT",
+      type: "Motor"
+    }
+  ])
+); // 0
 
-console.log(ganjilGenapAsianGames(1, [
-  {
-    plat: 'A 2431 HE',
-    type: 'Motor'
-  }, {
-    plat: 'AB 87112 RFS',
-    type: 'Motor'
-  }, {
-    plat: 'Z 999 ERT',
-    type: 'Motor'
-  }
-])) // 0
+console.log(
+  ganjilGenapAsianGames(32, [
+    {
+      plat: "X 123 HAHA",
+      type: "Mobil"
+    }
+  ])
+); // invalid dates
 
-console.log(ganjilGenapAsianGames(32, [{
-  plat: 'X 123 HAHA',
-  type: 'Mobil'
-}])) // invalid dates
+console.log(
+  ganjilGenapAsianGames(0, [
+    {
+      plat: "X 123 HAHA",
+      type: "Mobil"
+    }
+  ])
+); // invalid dates
 
-console.log(ganjilGenapAsianGames(0, [{
-  plat: 'X 123 HAHA',
-  type: 'Mobil'
-}])) // invalid dates
+// if(date % 2 === 0){
+//   for(let i = 0; i < data.length; i++){
+//     if(data[i].type === 'Mobil'){
+//       arrtemp.push(data[i].plat)
+//     }
+//   }
 
-
-
-  // if(date % 2 === 0){
-  //   for(let i = 0; i < data.length; i++){
-  //     if(data[i].type === 'Mobil'){
-  //       arrtemp.push(data[i].plat)
-  //     }
-  //   }
-
-  //   for(let i = 0; i < arrtemp.length; i++){
-  //     var a = ''
-  //     for(let j = 0; j < arrtemp[i].length; j++){
-  //       if(arrtemp[i][j] === '1' || arrtemp[i][j] === '2' || arrtemp[i][j] === '3' || arrtemp[i][j] === '4' || arrtemp[i][j] === '5' || arrtemp[i][j] === '6' || arrtemp[i][j] === '7' ||arrtemp[i][j] === '8' || arrtemp[i][j] === '9' || arrtemp[i][j] === '10'){
-  //         a += arrtemp[i][j]
-  //       }
-  //     }
-  //     number.push(Number(a))
-  //     if(a % 2 === 0){
-  //       counter ++
-  //     }
-  //   }
-  // }
-  // if(date % 2 !== 0){
-  //   // var arrtemp = []
-  //   for(let i = 0; i < data.length; i++){
-  //     if(data[i].type === 'Mobil'){
-  //       arrtemp.push(data[i].plat)
-  //     }
-  //   }
-  //   // var number = []
-  //   for(let i = 0; i < arrtemp.length; i++){
-  //     var a = ''
-  //     for(let j = 0; j < arrtemp[i].length; j++){
-  //       if(arrtemp[i][j] === '1' || arrtemp[i][j] === '2' || arrtemp[i][j] === '3' || arrtemp[i][j] === '4' || arrtemp[i][j] === '5' || arrtemp[i][j] === '6' || arrtemp[i][j] === '7' ||arrtemp[i][j] === '8' || arrtemp[i][j] === '9' || arrtemp[i][j] === '10'){
-  //         a += arrtemp[i][j]
-  //       }
-  //     }
-  //     number.push(Number(a))
-  //     if(a % 2 !== 0){
-  //       counter ++
-  //     }
-  //   }
-  // }
+//   for(let i = 0; i < arrtemp.length; i++){
+//     var a = ''
+//     for(let j = 0; j < arrtemp[i].length; j++){
+//       if(arrtemp[i][j] === '1' || arrtemp[i][j] === '2' || arrtemp[i][j] === '3' || arrtemp[i][j] === '4' || arrtemp[i][j] === '5' || arrtemp[i][j] === '6' || arrtemp[i][j] === '7' ||arrtemp[i][j] === '8' || arrtemp[i][j] === '9' || arrtemp[i][j] === '10'){
+//         a += arrtemp[i][j]
+//       }
+//     }
+//     number.push(Number(a))
+//     if(a % 2 === 0){
+//       counter ++
+//     }
+//   }
+// }
+// if(date % 2 !== 0){
+//   // var arrtemp = []
+//   for(let i = 0; i < data.length; i++){
+//     if(data[i].type === 'Mobil'){
+//       arrtemp.push(data[i].plat)
+//     }
+//   }
+//   // var number = []
+//   for(let i = 0; i < arrtemp.length; i++){
+//     var a = ''
+//     for(let j = 0; j < arrtemp[i].length; j++){
+//       if(arrtemp[i][j] === '1' || arrtemp[i][j] === '2' || arrtemp[i][j] === '3' || arrtemp[i][j] === '4' || arrtemp[i][j] === '5' || arrtemp[i][j] === '6' || arrtemp[i][j] === '7' ||arrtemp[i][j] === '8' || arrtemp[i][j] === '9' || arrtemp[i][j] === '10'){
+//         a += arrtemp[i][j]
+//       }
+//     }
+//     number.push(Number(a))
+//     if(a % 2 !== 0){
+//       counter ++
+//     }
+//   }
+// }

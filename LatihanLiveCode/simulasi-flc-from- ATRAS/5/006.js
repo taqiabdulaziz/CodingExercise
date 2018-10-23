@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ================
 Recursive - Hanya Bilangan Terbagi Nol
@@ -15,6 +16,17 @@ function akan mereturn sebuah sebuah number yang hanya sisa baginya nol dari bil
 */
 
 function dividableRecursive (array, num) {
+
+    if (array.length == 0 && array[0] % num != 0) {
+        return ""
+    } else if (array.length == 0 && array[0] % num == 0) {
+        return array[0]
+    }
+    if (array[0] % num != 0) {
+        return dividableRecursive(array.slice(1), num)
+    } else if (array[0] % num == 0) {
+        return array[0] +" "+ dividableRecursive(array.slice(1), num)
+    }
     
 }
 

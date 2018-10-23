@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 ================
 Format Uang (KBBI)
@@ -28,7 +29,23 @@ output: Rp2.000,00
 
 
 function formatUang(number) {
-  //code here
+  var numStr = String(number)
+  var result = []
+  var counter = 0
+
+  for (let i = numStr.length-1; i >= 0; i--) {
+    if (counter == 3) {
+      result.unshift(".")
+      result.unshift(numStr[i])
+      counter = 0
+    } else {
+      counter++
+      result.unshift(numStr[i])
+    }
+    
+  }
+
+  return "Rp"+result.join("")
 
 }
 

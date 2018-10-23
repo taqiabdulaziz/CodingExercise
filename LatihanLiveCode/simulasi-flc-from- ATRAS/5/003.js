@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
 ================
 Hitung Kembalian
@@ -12,21 +13,34 @@ diubah-ubah dan asumsi uang kembaliannya selalu cukup dengan jumlah ketersediaan
  
 */
 
-function hitungKembalian(bayar, harga){
-
+function hitungKembalian(bayar, harga) {
+  var kembalian = bayar - harga;
+  var totalUang = 0;
   var ketersediaanUang = [
-      { nominal: 100000, jumlah: 5},
-      { nominal: 50000, jumlah: 5},
-      { nominal: 20000, jumlah: 5 },
-      { nominal: 10000, jumlah: 5},
-      { nominal: 5000, jumlah: 5}
+    { nominal: 100000, jumlah: 5 },
+    { nominal: 50000, jumlah: 5 },
+    { nominal: 20000, jumlah: 5 },
+    { nominal: 10000, jumlah: 5 },
+    { nominal: 5000, jumlah: 5 }
   ];
 
-  //Your code here  
 
+  function proses(object) {
+    for (let i = 0; i < ketersediaanUang.length; i++) {
+      for (const key in object[i]) {
+        if (totalUang + object[i][key] <= kembalian) {
+          totalUang += object[i][key];
+                  
+        }
+      }
+    }
+  }
+
+  proses(ketersediaanUang);
+
+  return totalUang;
 }
 // console.log(kembalian)
-
 
 // Test Case
 console.log(hitungKembalian(1000000, 755000));
@@ -63,5 +77,3 @@ output
 
 // TEST CASE 5
 // console.log(hitungKembalian(50000,500000)); // Uang tidak cukup
-
-

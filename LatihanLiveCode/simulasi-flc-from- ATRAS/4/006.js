@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /*
 
 Diberikan sebuah function angka terbesar yang menerima satu parameter berupa array. 
@@ -14,7 +15,18 @@ RULES
 */
 
 function angkaTerbesar(sentence) {
-  // you can only write your code here!
+  if (sentence.length == 0) {
+    return -1
+  } else if (sentence.length == 1) {
+    return sentence[0]
+  } else {
+    if (sentence[0] > sentence[1]) {
+      sentence[1] = sentence[0]
+      return angkaTerbesar(sentence.slice(1))
+    } else {
+      return angkaTerbesar(sentence.slice(1))
+    }
+  }
  
 }
 
