@@ -25,16 +25,14 @@ function jumlahBakteri(N, B, i) {
   var jmlPertama = 1;
   var total = 0;
 
-  
-
   for (let j = 0; j < i; j++) {
     if (j != 0) {
       jmlPertama = jmlPertama * N;
-	  total = jmlPertama + B;
-	  jmlPertama = total
+      total = jmlPertama + B;
+      jmlPertama = total;
     } else if (j == 0) {
-		total = 1
-	}
+      total = 1;
+    }
   }
 
   return total;
