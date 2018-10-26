@@ -1,0 +1,21 @@
+html {
+    scroll-behavior: smooth;
+    background-color: 
+    #0d47a1
+}
+#first_name1 {
+    font-size: 5vh;
+    height: 100px;
+    
+
+}
+.background {
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+}
+
+.a {
+    font-weight: bold;
+}
+
