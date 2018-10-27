@@ -26,6 +26,7 @@ if (checkFromHome == false) {
     "&apiKey=553ba9189dc8497d94184f651eb212ea";
   load(url);
   checkFromHome = true;
+  //test
 }
 
 function arrowUp() {
