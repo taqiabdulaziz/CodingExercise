@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+
+            <!-- login form -->
+            <v-container grid-list-xs v-show="!isLogin">
+                <v-layout row justify-center>
+                    <v-form ref="form" v-model="valid" lazy-validation>
+                        <h3 style="text-align: center">Login</h3>
+
+                        <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+
+                        <v-text-field v-model="password" :counter="10" :rules="passwordRules" label="Password" required></v-text-field>
+
+                        <v-btn :disabled="valid" color="success" @click="login()">
+                            Validate
+                        </v-btn>
+
+                    </v-form>
+                </v-layout>
+            </v-container>
+
+            <!-- navbar/toolbar -->
+            <v-toolbar v-show="isLogin">
+                <v-toolbar-side-icon></v-toolbar-side-icon>
+                <v-toolbar-title>LIVECODE 1 Phase 2</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-toolbar-items class="hidden-sm-and-down">
+                    <v-btn flat @click="logout()">Logout</v-btn>
+                    
+                </v-toolbar-items>
+            </v-toolbar>
+            
+            <v-container grid-list-xs>
+                <v-layout v-show="isLogin" mb-3>
+                    <v-flex xs12 sm6 offset-sm3 style="margin-bottom: 5vh">
+                        <v-card v-for="(item, index) in myFoodList" :key="index" mb-4>
+
+                            <v-card-title primary-title>
+                                <div>
+                                    <h3 class="headline mb-0">{{item.title}}</h3>
+                                    <br>
+                                    <h4>Resep</h4>
+                                    <ul>
+                                        <li v-for="(ingredient, index) in item.ingredients" :key="index">{{ingredient}}</li>
+                                    </ul>
+                                </div>
+                            </v-card-title>
+
+                            <v-card-actions>
+                                <v-btn flat color="orange">ADD TO LISt</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                        <hr>
+                    </v-flex>
+                </v-layout>
+            </v-container>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script src="./index.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
