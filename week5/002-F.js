@@ -29,6 +29,7 @@ output: 4
 
 function secondLargest(numbers) {
   var counter = 0;
+  
   while (counter < numbers.length) {
     for (let i = 0; i < numbers.length; i++) {
       if (numbers[i] >= numbers[i + 1]) {
